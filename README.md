@@ -1,3 +1,4 @@
 # demoDjango
 First Demo proj
-Author - Ali Hassan
+<br>
+<h1>Author - Ali Hassan</h1>
