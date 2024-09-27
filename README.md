@@ -1,0 +1,2 @@
+# demoDjango
+First Demo proj
