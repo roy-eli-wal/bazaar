@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Log in{% endblock %}
+
+{% block content %}
+    <section class = "max-w-xl p-8 " style=" margin: 13vh auto; border: 1px solid ; ">
+        <h2 class="text-2xl text-center mb-12">Log in</h1>
+
+        <form method="post" action="." style="display: flex; flex-direction: column; gap: 15px;">
+            {% csrf_token %}
+            {% comment %} {{ reg_form.non_field_errors }} {% endcomment %}
+
+            <div>
+                <label class="block mb-4" style =" font-weight: bold;">Username</label><br>
+                {{ form.username }}
+            </div> 
+            <div>
+                <label class="block mb-4" style="font-weight: bold; ">Password</label><br>
+                {{ form.password }}
+            </div>
+            {% if form.errors or form.non_field_errors %}
+                <div style="color: red; font-size: 0.9rem;">
+                    {% for field in form %}
+                        {{ field.errors }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <button class=" my-10 align-center text-lg py-2 px-5 font-semibold bg-orange-400 hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full "  type="submit">
+                Log in
+            </button>
+        </form>
+    </section>
+{% endblock %}
+
+
+

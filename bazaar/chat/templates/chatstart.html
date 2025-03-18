@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Starts Chat{% endblock %}
+
+{% block content %}
+<html>
+<body>
+  <h2 class="text-2xl text-center mb-12">Start Chat</h1>
+<div style="max-width: 510px; padding: 20px; border: 1px solid; border-radius: 10px; margin: 13vh auto; ">
+<form method="post" action=".">
+    {% csrf_token %}
+
+    <div class="space-y-4">
+        {{ validatedfrm.as_p }}
+    </div>
+
+    {% if validatedfrm.errors or validatedfrm.non_field_errors %}
+        <div style="max-width: 510px; padding: 20px; border: 1px solid; border-radius: 10px; margin: 13vh auto; " class="mb-3 p-6 bg-red-100 rounded-xl">
+            {% for field in validatedfrm %}
+                {{ field.errors }}
+            {% endfor %}
+
+            {{ validatedfrm.non_field_errors }}
+        </div>
+    {% endif %}
+
+    <button class="mt-6 py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Send</button>
+</form>
+</div>
+{% endblock %}
+
+</body>

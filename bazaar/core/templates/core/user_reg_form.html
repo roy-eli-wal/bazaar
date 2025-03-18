@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<section class = "max-w-xl p-6 " style=" margin: 13vh auto; border: 1px solid ; ">
+    <h2 class="text-2xl text-center mb-12">Sign up</h1>
+
+        <form method="post" action="." style="display: flex; flex-direction: column; gap: 15px;">
+            {% csrf_token %}
+            {% comment %} {{ reg_form.non_field_errors }} {% endcomment %}
+
+            <div>
+                <label for="id_username" style="display: block; font-weight: bold; margin-bottom: 5px;">Username</label><br>
+                {{ reg_form.username }}
+            </div>
+
+            <div>
+                <label for="id_email" style="display: block; font-weight: bold; margin-bottom: 5px;">Email</label><br>
+                {{ reg_form.email }}
+            </div>
+
+            <div>
+                <label for="id_password1" style="display: block; font-weight: bold; margin-bottom: 5px;">Password</label><br>
+                {{ reg_form.password1 }}
+            </div>
+
+            <div>
+                <label for="id_password2" style="display: block; font-weight: bold; margin-bottom: 5px;">Repeat Password</label><br>
+                {{ reg_form.password2 }}
+            </div>
+
+            {% if reg_form.errors or reg_form.non_field_errors %}
+                <div style="color: red; font-size: 0.9rem;">
+                    {% for field in reg_form %}
+                        {{ field.errors }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <button type="submit" class=" text-lg py-2 px-5 font-semibold bg-orange-400 hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">
+                Sign Up
+            </button>
+        </form>
+    </section>
+{% endblock %}

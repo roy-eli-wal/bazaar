@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Chat{% endblock %}
+
+{% block content %}
+<h2 class="text-2xl text-center mb-12"> Chat</h1>
+
+<div style="  margin: 0 auto; padding: 40px 20px;"class=" w-3/6 flex flex-col item-center max-w-3xl">
+    {% comment %}  messages : chat{% endcomment %}
+    {% for msg in chat.all_msgs.all %}
+        <div class="p-6 mb-2  flex mb-4 flex flex-col item-center  {% if msg.generated_by == request.user %}bg-teal-100{% else %}bg-teal-100{% endif %} rounded-xl">
+            <div>
+                <p class=""><strong>{{ msg.generated_by.username }}</strong> @ {{ msg.date_at }}</p>
+                <p class="" >{{ msg.broadcasting }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<form method="post" action="." class="mt-6 flex justify-center items-center flex-col">
+    {% csrf_token %}
+
+    {{ validatedfrm.as_p }}
+
+    <button class="py-4 my-20 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Message➡️</button>
+</form>
+{% endblock %}

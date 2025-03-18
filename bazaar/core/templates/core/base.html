@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name = "viewport" content=" width=device-width, initial-scale=1.0"/>
+
+    <script src = "https://cdn.tailwindcss.com"></script>
+
+    <title> {% block title%} {% endblock%} | Bazaar</title>
+    
+
+</head>
+<body>
+    <!-- It applies the flex property to an element, enabling it to participate in a flexbox container. 
+     The flex class essentially sets the display property to flex, initiating the flexbox layout model for the element.
+
+     The justify-between property in Tailwind CSS is used to distribute items within a flexbox container so that the first item is aligned to the left edge, 
+     the last item is aligned to the right edge, and the remaining items are evenly spaced between them.
+
+The item-center property in Tailwind CSS is used to align flex items vertically in the center of their container. 
+It applies the align-items: center property to the container, ensuring that all child elements are centered vertically within their parent.
+Flexbox Container: Ensure that the parent container has the flex class applied to it. This establishes the flexbox layout.
+Child Items: Place the items you want to align vertically within the flexbox container.
+Apply item-center: Add the item-center class to the parent container. This will automatically apply the align-items: center property to the container, 
+which is responsible for the vertical alignment.
+     -->
+
+    <nav class=" py-4 flex justify-around item-center border-b border-gray-200 bg-teal-800 ">
+         <a href="/"><img class = "h-10" src="{% static 'admin/img/logo.png'  %}" alt="My Logo"></a>
+         
+        <div class=" space-x-6">
+            <a href="{% url 'new-listing' %}" class="text-lg py-1 px-4 font-semibold border rounded-full border-white hover:bg-white hover:text-teal-500  text-white">Add new item</a>
+            <a href="{% url 'all-items' %}" class="text-lg py-1 px-4 font-semibold border border-white rounded-full border-white hover:bg-white hover:text-teal-500 text-white">Find items</a>
+            {% comment %} <a href="{% url 'about' %}" class="text-lg py-1 px-4 font-semibold hover:bg-white hover:text-teal-500 border rounded-full border-white text-white">Our mission</a> {% endcomment %}
+            <a href="{% url 'about' %}" class="text-lg py-1 px-4 font-semibold hover:bg-white border rounded-full border-white hover:text-teal-500 text-white">Our team</a>
+            <a href="{% url 'contact' %}" class="text-lg py-1 px-4 font-semibold hover:bg-white border rounded-full border-white hover:text-teal-500 text-white">Contact us</a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'chatbox' %}" class=" text-lg py-2 px-5 font-semibold bg-orange-400  hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">Inbox</a>
+            <a href="{% url 'my-listings' %}" class=" text-lg py-2 px-5 font-semibold bg-orange-400  hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">My hub</a>
+            <a href="{% url 'user-logout' %}" class=" text-lg py-2 px-5 font-semibold bg-orange-400  hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">Sign out</a>
+           
+        {% else %}
+        <a href="{% url 'user-registerion' %}" class= " text-lg py-2 px-5 font-semibold bg-orange-400  hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">Sign up</a>
+        <a href="{% url 'signin' %}" class=" text-lg py-2 px-5 font-semibold bg-orange-400 hover:text-teal-500 text-white hover:bg-white hover:text-teal-500 rounded-full ">Log in</a>
+        {% endif %}
+            
+        </div>
+    </nav>
+    <div>   
+        {%block content%}
+        {% endblock %}
+    </div>
+    <footer class="p-8 flex justify-around bg-teal-800">
+        <div class="w-2/4 p-15">
+            <h3 class="my-8 font-semibold text-white text-xl">About Bazaar</h3>   
+            <p class="text-lg  text-white"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste hic, error rem nesciunt cum delectus molestias reiciendis ratione sunt blanditiis
+                 perferendis, similique sed tenetur perspiciatis temporibus quas fuga laborum corporis.</p>
+
+        </div>
+        <div class="w-2/6">
+            <h3 class="font-bold text-lg  text-white mb-5"> Menu</h3>  
+            <ul>
+                <li><a href="{% url 'about' %}" class="text-lg  text-white">About</a></li>
+                <li><a href="{% url 'contact' %}" class="text-lg  text-white">Contact</a></li>
+                <li><a href="{% url 'privacypolicy'  %}" class="text-lg  text-white">Privacy policy</a></li>
+                <li><a href="{% url 'termofuse' %}" class="text-lg  text-white">Term of use</a></li>
+            </ul>
+          </div>  
+    </footer>
+</body>
+</html>

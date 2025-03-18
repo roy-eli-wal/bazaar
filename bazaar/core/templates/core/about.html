@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<section style = " margin: 0 auto;"class="p-10 w-full text-center;">
+    <!-- Hero Section -->
+    <div class="m-10">
+        <!-- Main title of the About section, styled with a larger font size and a green color -->
+        <h1 class=" text-4xl  mb-4;">About Bazaar</h1>
+        
+        <!-- Description paragraph for the "About" section, styled with a smaller font size and a muted color -->
+        <p class ="font-size: 1rem; color: #666; line-height: 1.6;">
+            Welcome to our student marketplace - Bazaar
+        </p>
+    </div>
+
+    <!-- Vision Section -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 40px;">
+        <!-- Left section (Image) -->
+        <div style="flex: 1 1 400px;">
+            <!-- Placeholder image for Vision section -->
+            <img src="https://via.placeholder.com/150" alt="Vision" style="width: 100%; border-radius: 10px;">
+        </div>
+        
+        <!-- Right section (Text) -->
+        <div style="flex: 1 1 400px; text-align: left;">
+            <!-- Vision title -->
+            <h2 style="font-size: 2rem; color: #333; margin-bottom: 20px;">Our Vision</h2>
+            
+            <!-- Vision description paragraph, with styling for a smaller font size and line height for readability -->
+            <p style="font-size: 1rem; color: #666; line-height: 1.6;">
+                Our mission is simple: to develop one that will provide an ease of access to a students’ buying and selling point within the students’ community. This perspective was formed by the authors’ own experience of hearing stories and wanted to create a tool that would make the student’s experience better, as well as help them feel connected to others. This WWW site forms the basis of a middleman, which fosters efficiency, and allows students to save their money as well as avoid unnecessary purchases, and to meet people from other groups. 
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class = "p-10 ">
+        <!-- Title of the contact section -->
+        <h2 style="font-size: 2rem; color: #333; margin-bottom: 20px;">Get in Touch</h2>
+        
+        <!-- Description of how users can contact the team -->
+        <p style="font-size: 1rem; color: #666; margin-bottom: 20px;">
+            We are available to help you 24/7, via email or chat
+        </p>
+        
+        <!-- Link to the contact page (e.g., a form or email) -->
+        <a href="{% url 'contact' %}" style="background-color: #106883; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-size: 1rem;">
+            Contact Us
+        </a>
+    </div>
+</section>
+
+{% endblock %}

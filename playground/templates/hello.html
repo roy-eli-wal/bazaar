@@ -5,8 +5,13 @@
     <title>Bazaar</title>
 </head>
 <body>
-    <h1>
-        Hello World Wahtys going on brother
-    </h1>
+   <div class="container">
+    {% for student in obj%}
+    <h1>{{student.name}}</h1>
+   </div>
+   <div class="container">
+    <h1>{{student.des}}</h1>
+   </div>
+   {% endfor %}
 </body>
 </html>

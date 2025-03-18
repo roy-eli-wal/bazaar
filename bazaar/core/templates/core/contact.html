@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+
+<!-- Main Content Section -->
+<section class="p-16" style="margin: 0 auto;">
+    <!-- Header Section: Page Title and Introduction Text -->
+    <div style="margin-bottom: 50px; text-align: center; ">
+        <h1 class ="text-2xl mb-5">Contact Us</h1>
+        <!-- Brief description or instructions for the user -->
+        <p class="font-2xl leading-1.6">
+            We’d love to hear from you! Please fill out the form below, and we’ll get back to you as soon as possible.
+        </p>
+    </div>
+
+    <!-- Contact Form Section: Left side for form input and right side for contact info -->
+    <div class="flex flex-col items-center" style="gap: 20px; height: 60vh;">
+        
+  
+
+        <!-- Right Column: Contact Information -->
+        <div style="flex: 1 1 400px;">
+            <h2  class="mb-5 text-2xl">Our Contact Details</h2>
+            <!-- Contact Information: Email -->
+            <p class="text-xl mb-5">
+                <strong>Email:</strong> supportxyz@bazaar.com
+            </p>
+            <!-- Contact Information: Phone Number -->
+            <p class="text-xl mb-5">
+                <strong>Phone:</strong> +11 230 459 737
+            </p>
+            <!-- Contact Information: Address -->
+            <p class="text-xl mb-5">
+                <strong>Address:</strong> 25 Star Street, Hogwarts, Dark City, New Atlantis
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

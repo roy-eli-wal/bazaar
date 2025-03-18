@@ -1,0 +1,118 @@
+{% extends 'core/base.html'%}
+{% load static %}
+{%block title%}
+Welcome
+{% endblock %}
+{%block content%}
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            
+            margin: 0 auto;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <section>
+    <div class="p-16 flex justify-around gap-8 relative items-center container">
+        <div class="flex-1">
+            <h1 class=" mb-8 text-teal-900 text-6xl leading-tight">The <span class="bg-yellow-300 p-0.5">Lorem</span> Ipsum:</h1>
+            <h2 class = 'text-4xl font-normal mb-8 text-teal-900'>dummy text of the printing. ⭐</h2>
+            <p class="mb-8 px-2 text-teal-900 leading-relaxed"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry!</p>
+            
+        </div>
+        <div class="flex-1 relative">
+            <img src="{% static 'admin/img/people1.png' %}" alt="vector shopping">
+           
+        </div>
+    </div>
+    <section class="bg-teal-100 flex justify-center items-center">
+           <div class= 'flex justify-center flex-col items-center'>
+            <img class = 'image-container mb-8 py-10 max-w-96 max-h-96' src="{% static 'admin/img/seal1.png' %}" alt="verified badge">
+            <h1 class = 'font-medium text-center text-2xl text-teal-900'>Bazaar exists to <strong>seamlessly</strong> Lorem Ipsum is simply</h1>
+            <h1 class = 'mb-8 font-medium text-center text-2xl text-teal-900'>  Lorem Ipsum is simply dummy text. ♻️</h1>
+            <p class="text-teal-900 leading-relaxed">Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
+            <p class="mb-8 text-teal-900 leading-relaxed"> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            <img class = 'mb-8 py-10 image-container max-w-72 max-h-72' src="{% static 'admin/img/shopping-shadow.png' %}" alt="team photo">
+           
+        </div>
+    </section>
+    <section>
+        <div class="max-w-7xl container px-40 py-20 ">
+            <h1 class="text-center mb-10 text-3xl text-teal-900">Use of Bazaar means:</h1>
+            
+            <div class="flex justify-space-between flex-wrap gap-12">
+                <div class="flex-1 min-w-72 text-center">
+                    <img class="" src="{% static 'admin/img/cat1.jpg' %}" alt="col-img1" >
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">1. Lorem Ipsum is simply dummy </h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+    
+                <div class="flex-1 min-w-72 text-center">
+                    <img src="{% static 'admin/img/alien1.png' %}" alt="col-img2" >
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">2.Lorem Ipsum is simply dummy</h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+    
+                <div class="flex-1 min-w-72 text-center">
+                    <img src="{% static 'admin/img/trees1.png' %}" alt="col-img3">
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">3.Lorem Ipsum is simply dummy</h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="max-w-7xl container px-40 py-20 ">
+            <h1 class="text-center mb-10 text-3xl text-teal-900">How does Bazaar work?:</h1>
+            
+            <div class="flex justify-space-between flex-wrap gap-12">
+                <div class="flex-1 min-w-72 text-center">
+                    <img src="{% static 'admin/img/heart1.jpg' %}" alt="col-img1" >
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">1. Lorem Ipsum is simply dummy </h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+    
+                <div class="flex-1 min-w-72 text-center">
+                    <img src="{% static 'admin/img/magnifier1.jpg' %}" alt="col-img2" >
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">2.Lorem Ipsum is simply dummy</h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+    
+                <div class="flex-1 min-w-72 text-center">
+                    <img src="{% static 'admin/img/calendar1.png' %}" alt="col-img3">
+                    <h2 class="text-base mb-5 mt-5 font-bold text-teal-900">3.Lorem Ipsum is simply dummy</h2>
+                    <p class="leading-6 max-w-72 container text-teal-900">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class=" bg-teal-100 relative w-full h-screen">
+        
+            <div class = "absolute left-0 top-0 w-1/2 h-full">
+                <img class="block w-full h-full object-cover"src="{% static 'admin/img/four_people.png' %}"> </img>
+            </div>
+            <div style ="padding-left: 50px; " class= "absolute top-2/4 left-2/4 pl-50 w-1/2">
+                <h2 class="mb-5 text-4xl text-teal-900">
+             Unis, do you want to partner with us?
+                </h2>
+                <p class="text-teal-900">
+                    Find out more about how you can bring Bazaar to your uni today!
+                </p> 
+                    <a class = "inline-block px-6 py-3 m-2  font-semibold rounded-full bg-orange-400 text-white hover:text-teal-500 text-white hover:bg-white hover:text-teal-500" href="">Contact us </a>
+                
+            </div>
+      
+    </section>
+</body>
+</html>
+
+{% endblock%}
+
